@@ -89,11 +89,11 @@ const GetUsers = AsyncHandler(async (req, res) => {
 
 const GetAllUserCtr = AsyncHandler(async (req, res) => {
   try {
-    const user = await User.findById(req.user);
-    if (!user) {
-      res.status(400);
-      throw new Error("User not found, please signup");
-    }
+    // const user = await User.findById(req.user);
+    // if (!user) {
+    //   res.status(400);
+    //   throw new Error("User not found, please signup");
+    // }
     const users = await User.find().sort({ createdAt: -1 }).lean().exec();
 
     return res.status(200).json(users);
