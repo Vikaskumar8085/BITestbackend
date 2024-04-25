@@ -19,8 +19,8 @@ const userRouter = express.Router();
 userRouter.post("/register", validator.body(registervalidate), RegisterCtr);
 userRouter.post("/login", validator.body(loginvalidate), LoginCtr);
 userRouter.post("/logout", LogoutCtr);
-userRouter.get("/getuser", VerifyToken, GetUsers);
-userRouter.get("/getall", VerifyToken, GetAllUserCtr);
+userRouter.get("/getuser", GetUsers);
+userRouter.get("/getall", GetAllUserCtr);
 userRouter.post("/invite", VerifyToken, InvitationCtr);
 
 module.exports = userRouter;
