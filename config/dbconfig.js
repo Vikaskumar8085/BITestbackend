@@ -14,6 +14,6 @@ require("dotenv").config();
         console.log("connection established");
       });
   } catch (error) {
-    message.error(error.response?.data);
+    console.error(error.message);
   }
 })();
